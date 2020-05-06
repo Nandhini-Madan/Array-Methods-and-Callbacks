@@ -11,7 +11,55 @@ console.log(fifaData);
 (c) Home Team goals for 2014 world cup final
 (d) Away Team goals for 2014 world cup final
 (e) Winner of 2014 world cup final */
+let sample_data= [
+    {
+      "Year": 1930,
+      "Datetime": "13 Jul 1930 - 15:00",
+      "Stage": "Group 1",
+      "Stadium": "Pocitos",
+      "City": "Montevideo",
+      "Home Team Name": "France",
+      "Home Team Goals": 4,
+      "Away Team Goals": 1,
+      "Away Team Name": "Mexico",
+      "Win conditions": "",
+      "Attendance": 4444,
+      "Half-time Home Goals": 3,
+      "Half-time Away Goals": 0,
+      "Referee": "LOMBARDI Domingo (URU)",
+      "Assistant 1": "CRISTOPHE Henry (BEL)",
+      "Assistant 2": "REGO Gilberto (BRA)",
+      "RoundID": 201,
+      "MatchID": 1096,
+      "Home Team Initials": "FRA",
+      "Away Team Initials": "MEX"
+    }];
+let home_team = [];
+let Away_team=[];
+let home_team_goals=[];
+let Away_team_goals=[];
+let Winner_team=[];
+for (let i = 0; i < fifaData.length; i++) {
+    if (fifaData[i].Year == 2014) {
+        home_team.push(fifaData[i]["Home Team Name"]);
+        Away_team.push(fifaData[i]["Away Team Name"]);
+        home_team_goals.push(fifaData[i]["Home Team Goals"]);
+        Away_team_goals.push(fifaData[i]["Away Team Goals"]);
+        if(fifaData[i]["Home Team Goals"]>fifaData[i]["Away Team Goals"]){
+            Winner_team.push(fifaData[i]["Home Team Name"]);
+        }
+        else{
+            Winner_team.push(fifaData[i]["Away Team Goals"]);
+        }
 
+    }
+
+}
+console.log("Home Team Name "+home_team);
+console.log("Away Team Name "+Away_team);
+console.log("home Team goals "+home_team_goals);
+console.log("Away Team goals "+Away_team_goals);
+console.log("winner team "+Winner_team);
 
 /* Task 2: Create a function called  getFinals that takes `data` as an argument and returns an array of objects with only finals data */
 
